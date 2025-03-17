@@ -47,9 +47,10 @@ export default defineConfig({
     },
   },
   vite: {
-    resolve: { alias: { 'coding-playground': resolve(__dirname, '../packages') } },
+    resolve: { alias: { '~': resolve(__dirname, '../packages') } },
     plugins: [
       AutoImport({
+        imports: ['vue'],
         dts: true,
         resolvers: [ElementPlusResolver()],
       }),

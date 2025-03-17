@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import '@vitepress-demo-preview/component/dist/style.css'
 import './base.css'
 import 'virtual:uno.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
   ...DefaultTheme,
