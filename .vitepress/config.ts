@@ -35,6 +35,10 @@ export default defineConfig({
     nav,
     sidebar,
     socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/coding-playground' }],
+    editLink: {
+      pattern: 'https://github.com/coderhyh/coding-playground/blob/main/:path',
+      text: '查看源码',
+    },
     search: {
       provider: 'local',
     },
