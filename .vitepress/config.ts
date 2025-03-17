@@ -1,6 +1,9 @@
 import { resolve } from 'node:path'
 import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vitepress'
 
 import nav from './nav'
@@ -46,8 +49,18 @@ export default defineConfig({
   vite: {
     resolve: { alias: { 'coding-playground': resolve(__dirname, '../packages') } },
     plugins: [
-      // @ts-expect-error unocss返回类型错误
+      AutoImport({
+        dts: true,
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        dts: true,
+        resolvers: [ElementPlusResolver()],
+      }),
       Unocss(),
     ],
+    ssr: {
+      noExternal: [/element-plus/],
+    },
   },
 })

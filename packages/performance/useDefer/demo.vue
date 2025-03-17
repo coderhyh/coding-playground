@@ -15,9 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { ElSwitch } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
-import 'element-plus/es/components/switch/style/css'
 
 /**
  * 延迟渲染组件的钩子函数

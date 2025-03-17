@@ -6,8 +6,12 @@ Vue3性能优化Hook，用于大量组件的延迟渲染。通过requestAnimatio
 
 ## 示例
 
+<client-only>
+
 :::preview 说明 || useDefer
 
 demo-preview=./demo.vue
 
 :::
+
+</client-only>
