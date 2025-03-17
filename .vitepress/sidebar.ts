@@ -10,7 +10,13 @@ export default <DefaultTheme.Sidebar>[
     items: [{ text: 'useDefer', link: '/packages/performance/useDefer' }],
   },
   {
-    text: 'hooks',
+    text: 'HOOKS',
     items: [{ text: 'useSum', link: '/packages/hooks/useSum' }],
+  },
+  {
+    text: 'GIS',
+    items: [
+
+    ],
   },
 ]

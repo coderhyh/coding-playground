@@ -4,11 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'packages/**/*.md'
-      - 'packages/.vitepress/**'
-      - 'packages/public/**'
+      - 'packages/**/*'
+      - '.vitepress/**/*'
 
 jobs:
   docs:
@@ -35,4 +34,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           branch: pages
-          folder: packages/.vitepress/dist
+          folder: .vitepress/dist
