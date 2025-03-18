@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-500px">
-    <div class="absolute left-5px top-5px z-999 w200px">
+    <div class="absolute left-5px top-5px z-1 w200px">
       <el-select v-model="mapStyle" placeholder="Select Map Style" size="small" @change="changeMapStyle">
         <el-option label="标准" value="standard" />
         <el-option label="街道" value="streets-v12" />

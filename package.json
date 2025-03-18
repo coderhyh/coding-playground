@@ -19,11 +19,10 @@
     "node": ">=18.18.2"
   },
   "scripts": {
-    "build": "npm run clean && vue-tsc --noEmit && vite build",
     "lint": "eslint packages/ --fix",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {

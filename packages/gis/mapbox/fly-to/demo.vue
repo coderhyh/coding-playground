@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-500px">
-    <div class="absolute left-5px top-5px z-999 w200px">
+    <div class="absolute left-5px top-5px z-1 w200px">
       <el-button type="primary" @click="flyTo([121.5, 31.23])">
         To 上海
       </el-button>

@@ -19,6 +19,7 @@ export default <DefaultTheme.Sidebar>[
       { text: 'Mapbox入门', link: '/packages/gis/mapbox/getting-started' },
       { text: '点击飞行效果', link: '/packages/gis/mapbox/fly-to' },
       { text: '地球自转效果', link: '/packages/gis/mapbox/rotation' },
+      { text: '添加图片', link: '/packages/gis/mapbox/add-img' },
     ],
   },
 ]

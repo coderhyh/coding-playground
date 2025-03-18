@@ -10,8 +10,8 @@ import nav from './nav'
 import sidebar from './sidebar'
 
 export default defineConfig({
-  title: ' ',
-  description: 'coding-playground是一个vitepress的起始模板',
+  title: 'Coding Playground',
+  description: 'Coding Playground 是一个代码案例集合库，用于存放各种实用的代码示例和最佳实践。',
   base: '/coding-playground',
   lastUpdated: true,
   head: [
@@ -19,7 +19,7 @@ export default defineConfig({
       'link',
       {
         rel: 'icon',
-        href: './vue-icon.svg',
+        href: 'https://cn.vuejs.org/logo.svg',
       },
     ],
     [
@@ -31,7 +31,7 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    logo: '/logo.svg',
+    // logo: '/logo.svg',
     nav,
     sidebar,
     socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/coding-playground' }],

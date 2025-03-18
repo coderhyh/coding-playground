@@ -1,12 +1,8 @@
 ---
-title: coding-playground入手指南
-titleTemplate: vitepress的起始模板
+title: Coding Playground
+titleTemplate: coding-playground
 ---
 
-# coding-playground
+# Coding Playground
 
-coding-playground是一个vitepress的起始模板
-
-## ✨ 特性
-
-- 🏄🏼‍♂️ 结构简洁实用
+这是一个代码案例集合库，用于存放各种实用的代码示例和最佳实践。
