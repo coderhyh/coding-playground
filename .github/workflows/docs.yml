@@ -28,7 +28,7 @@ jobs:
           node-version: '18.x'
           cache: pnpm
       - run: pnpm i
-      - run: pnpm run docs:build
+      - run: pnpm run build
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.3
