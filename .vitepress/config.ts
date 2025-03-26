@@ -31,7 +31,7 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    // logo: '/logo.svg',
+    logo: 'https://blog.coderhyh.cn/logo.png',
     nav,
     sidebar,
     socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/coding-playground' }],

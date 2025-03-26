@@ -20,7 +20,7 @@ onMounted(() => {
     projection: 'globe',
     zoom: 1,
   })
-
+  map.value.addControl(new mapboxgl.FullscreenControl())
   map.value.on('style.load', () => {
     map.value?.addSource('image', {
       type: 'image',
@@ -28,8 +28,8 @@ onMounted(() => {
       coordinates: [
         [120.153576, 30.287459],
         [120.153576 + 10, 30.287459],
-        [120.153576 + 10, 30.287459 + 10],
-        [120.153576, 30.287459 + 10],
+        [120.153576 + 10, 30.287459 - 10],
+        [120.153576, 30.287459 - 10],
       ],
     })
 

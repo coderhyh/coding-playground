@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import type { ExpressionSpecification } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { MapboxEnum } from '~/enums/mapbox'
 
@@ -31,9 +32,39 @@ onMounted(() => {
   map.value = new mapboxgl.Map({
     container: mapRef.value!,
     style: `mapbox://styles/mapbox/${mapStyle.value}`,
-    center: [121.5, 31.23],
+    center: [121.50218247710723, 31.23946062204682],
     projection: 'globe',
-    zoom: 1,
+    zoom: 15,
+    pitch: 60,
+  })
+  map.value.addControl(new mapboxgl.FullscreenControl())
+  map.value.on('style.load', () => {
+    map.value?.setConfigProperty('basemap', 'lightPreset', 'dawn')
+
+    const zoomBasedReveal = (value: number): ExpressionSpecification => {
+      return [
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        11,
+        0.0,
+        13,
+        value,
+      ]
+    }
+
+    map.value?.setRain({
+      'density': zoomBasedReveal(0.5),
+      'intensity': 1.0,
+      'color': '#a8adbc',
+      'opacity': 0.7,
+      'vignette': zoomBasedReveal(1.0),
+      'vignette-color': '#464646',
+      'direction': [0, 80],
+      'droplet-size': [2.6, 18.2],
+      'distortion-strength': 0.7,
+      'center-thinning': 0,
+    })
   })
 })
 

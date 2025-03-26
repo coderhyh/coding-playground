@@ -7,33 +7,36 @@
 <script setup lang="ts">
 import mapboxgl from 'mapbox-gl'
 import { MapboxEnum } from '~/enums/mapbox'
+import urbanAreas from './ne_50m_urban_areas.json'
 
 mapboxgl.accessToken = MapboxEnum.ACCESS_TOKEN
 const mapRef = ref<HTMLDivElement>()
 const map = ref<mapboxgl.Map>()
 
-// 自转效果
-const rotation = () => {
-  const center = map.value?.getCenter()
-  if (center) {
-    center.lng += 2
-    map.value?.easeTo({
-      center,
-      duration: 1000,
-      easing: t => t,
-    })
-  }
-}
 onMounted(() => {
   map.value = new mapboxgl.Map({
     container: mapRef.value!,
-    style: 'mapbox://styles/mapbox/standard',
-    center: [121.5, 31.23],
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [120.153576, 30.287459],
     projection: 'globe',
     zoom: 1,
   })
   map.value.addControl(new mapboxgl.FullscreenControl())
-  rotation()
-  map.value?.on('move', rotation)
+  map.value.on('load', () => {
+    map.value?.addSource('urban-areas', {
+      type: 'geojson',
+      data: urbanAreas as GeoJSON.GeoJSON,
+    })
+
+    map.value?.addLayer({
+      id: 'urban-areas',
+      source: 'urban-areas',
+      type: 'fill',
+      paint: {
+        'fill-color': '#f08',
+        'fill-opacity': 0.4,
+      },
+    })
+  })
 })
 </script>

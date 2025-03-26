@@ -36,5 +36,6 @@ onMounted(() => {
     projection: 'globe',
     zoom: 1,
   })
+  map.value.addControl(new mapboxgl.FullscreenControl())
 })
 </script>
